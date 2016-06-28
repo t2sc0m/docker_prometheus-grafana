@@ -13,7 +13,7 @@ tar zxf mysqld_exporter-0.7.1.linux-amd64.tar.gz -C /opt/prometheus_exporters
 ```
 
 ## Create mysql user and config file on client
-### Create user
+### Create DB user
 ```shell
 mysql> GRANT REPLICATION CLIENT, PROCESS ON *.* TO '{USER_NAME}'@'localhost' identified by '{YOUR_PASSWORD}';
 mysql> GRANT SELECT ON performance_schema.* TO '{USER_NAME}'@'localhost';
