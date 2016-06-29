@@ -36,7 +36,20 @@ $ ./node_exporter &
 $ ./mysqld_exporter -config.my-cnf=".my.cnf" &
 ```
 
+## Volume 
+```shell
+Prometheus home : /usr/local/prometheus
+Grafana home : /var/lib/grafana
+Grafana log : /var/log/grafana
+```
+
+## Port 
+```shell
+3000 : grafana
+9090 : prometheus
+```
+
 ## USAGE
 ```shell
-$ sudo docker run --rm -i -p 3000:3000 -v {LOCAL_SHARE_DIRECTORY}:/opt/prometheus -t adite/pro-gf
+$ sudo docker run --rm -i -p 3000:3000 -v {LOCAL_SHARE_DIRECTORY}:/usr/local/prometheus -t adite/pro-gf
 ```
