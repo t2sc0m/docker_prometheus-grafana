@@ -58,4 +58,12 @@ WEB BROWSER : http://{YOUR_HOST_IP_or_DOMAIN_NAME}:3000
 ID / PW : admin / admin
 ```
 
+## Grafana setting
+Go to Data Sources and add one for Prometheus
+![set](https://www.percona.com/blog/wp-content/uploads/2016/02/datasource.png)
+
+Check out the dashboards and graphs
+![check](https://www.percona.com/blog/wp-content/uploads/2016/02/Screen-Shot-2016-02-28-at-23.51.55.png)
+
+
 refs. https://www.percona.com/blog/2016/02/29/graphing-mysql-performance-with-prometheus-and-grafana/
