@@ -2,6 +2,7 @@
 
 for addr in $SERVER_IP
 do
+name=`echo $addr|awk -F. '{print $4}'`
 cat << EOF
 
 global:
@@ -12,12 +13,12 @@ scrape_configs:
     target_groups:
       - targets: ['${addr}:9100']
         labels:
-          alias: DB_${addr}
+          alias: DB${name}
   - job_name: mysql
     target_groups:
       - targets: ['${addr}:9104']
         labels:
-          alias: DB_${addr}
+          alias: DB${name}
 
 EOF
 done
