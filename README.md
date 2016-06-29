@@ -31,7 +31,7 @@ EOF
 
 ## Run exporter on client
 ```shell
-$ cd /opt/prometheus_exporters
+$ cd /usr/local/prometheus_exporters
 $ ./node_exporter &
 $ ./mysqld_exporter -config.my-cnf=".my.cnf" &
 ```
