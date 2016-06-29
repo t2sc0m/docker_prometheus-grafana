@@ -5,11 +5,11 @@
 
 ## Install exporter(agent) on client
 ```shell
-wget https://github.com/prometheus/node_exporter/releases/download/0.12.0rc3/node_exporter-0.12.0rc3.linux-amd64.tar.gz
-wget https://github.com/prometheus/mysqld_exporter/releases/download/0.7.1/mysqld_exporter-0.7.1.linux-amd64.tar.gz
-mkdir /opt/prometheus_exporters
-tar zxf node_exporter-0.12.0rc3.linux-amd64.tar.gz -C /opt/prometheus_exporters
-tar zxf mysqld_exporter-0.7.1.linux-amd64.tar.gz -C /opt/prometheus_exporters
+$ wget https://github.com/prometheus/node_exporter/releases/download/0.12.0rc3/node_exporter-0.12.0rc3.linux-amd64.tar.gz
+$ wget https://github.com/prometheus/mysqld_exporter/releases/download/0.7.1/mysqld_exporter-0.7.1.linux-amd64.tar.gz
+$ mkdir /usr/local/prometheus_exporters
+$ tar zxf node_exporter-0.12.0rc3.linux-amd64.tar.gz -C /usr/local/prometheus_exporters
+$ tar zxf mysqld_exporter-0.7.1.linux-amd64.tar.gz -C /usr/local/prometheus_exporters
 ```
 
 ## Create mysql user and config file on client
