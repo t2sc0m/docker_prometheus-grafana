@@ -1,7 +1,7 @@
 FROM adite/base
 MAINTAINER tescom <tescom@atdt01410.com>
 
-ENV SERVER_IP 127.0.0.1 127.0.0.2 127.0.0.3 127.0.0.4 127.0.0.5
+ENV SERVER_IP 127.0.0.1 
 
 # Install packages
 WORKDIR /tmp
