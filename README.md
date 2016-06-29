@@ -36,11 +36,9 @@ $ ./node_exporter &
 $ ./mysqld_exporter -config.my-cnf=".my.cnf" &
 ```
 
-## Volume 
+## Environment
 ```shell
-Prometheus home : /usr/local/prometheus
-Grafana home : /var/lib/grafana
-Grafana log : /var/log/grafana
+SERVER_IP : YOUR_DB_SERVER_IP_ADDRESS1 IP_ADDRESS2 IPADDRESS3 ...
 ```
 
 ## Port 
@@ -51,5 +49,5 @@ Grafana log : /var/log/grafana
 
 ## USAGE
 ```shell
-$ sudo docker run --rm -i -p 3000:3000 -v {LOCAL_SHARE_DIRECTORY}:/usr/local/prometheus -t adite/pro-gf
+$ sudo docker run --rm -i -p 3000:3000 -e SERVER_IP="DB_SERVER_IP1 DB_SERVER_IP2 DB_SERVER_IP3" -t adite/pro-gf
 ```
