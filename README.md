@@ -57,3 +57,5 @@ $ sudo docker run --rm -i -p 3000:3000 -e SERVER_IP="DB_SERVER_IP1 DB_SERVER_IP2
 WEB BROWSER : http://{YOUR_HOST_IP_or_DOMAIN_NAME}:3000
 ID / PW : admin / admin
 ```
+
+refs. https://www.percona.com/blog/2016/02/29/graphing-mysql-performance-with-prometheus-and-grafana/
