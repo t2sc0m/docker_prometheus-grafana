@@ -21,7 +21,7 @@ mysql> GRANT SELECT ON performance_schema.* TO '{USER_NAME}'@'localhost';
 
 ### Create config file
 ```shell
-$ cd /opt/prometheus_exporters
+$ cd /usr/local/prometheus_exporters
 $ cat << EOF > .my.cnf
 [client]
 user={YOUR_MYSQL_USER}
