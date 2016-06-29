@@ -59,10 +59,15 @@ ID / PW : admin / admin
 ```
 
 ## Grafana setting
-Go to Data Sources and add one for Prometheus
+Go to Data Sources and add settings for Prometheus
+```shell
+Name : Db1
+Type : Prometheus
+Uri : http://localhost:9090
+```
 ![set](https://www.percona.com/blog/wp-content/uploads/2016/02/datasource.png)
 
-Check out the dashboards and graphs
+Check out the dashboards and graphs. You can select host name.
 ![check](https://www.percona.com/blog/wp-content/uploads/2016/02/Screen-Shot-2016-02-28-at-23.51.55.png)
 
 
