@@ -22,6 +22,9 @@ RUN apt-get update && \
 ADD make_config.sh /make_config.sh
 RUN touch /usr/local/prometheus/prometheus.yml
 
+# Add grafana config file
+ADD grafana.ini /etc/grafana/grafana.ini
+
 ADD startup.sh /startup.sh
 RUN chmod 0755 /startup.sh
 
