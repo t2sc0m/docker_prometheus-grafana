@@ -21,7 +21,6 @@ RUN apt-get update && \
 # Make prometheus config file
 ADD make_config.sh /make_config.sh
 RUN touch /usr/local/prometheus/prometheus.yml
-RUN /make_config.sh >> /usr/local/prometheus/prometheus.yml
 
 ADD startup.sh /startup.sh
 RUN chmod 0755 /startup.sh
