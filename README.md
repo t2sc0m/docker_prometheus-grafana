@@ -51,3 +51,9 @@ SERVER_IP : YOUR_DB_SERVER_IP_ADDRESS1 IP_ADDRESS2 IPADDRESS3 ...
 ```shell
 $ sudo docker run --rm -i -p 3000:3000 -e SERVER_IP="DB_SERVER_IP1 DB_SERVER_IP2 DB_SERVER_IP3" -t adite/pro-gf
 ```
+
+## Grafana connect
+```shell
+WEB BROWSER : http://{YOUR_HOST_IP_or_DOMAIN_NAME}:3000
+ID / PW : admin / admin
+```
