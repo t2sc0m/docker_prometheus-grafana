@@ -1,8 +1,8 @@
 #!/bin/bash
 
+name=1
 for addr in $SERVER_IP
 do
-name=`echo $addr|awk -F. '{print $4}'`
 cat << EOF
 
 global:
@@ -21,4 +21,5 @@ scrape_configs:
           alias: DB${name}
 
 EOF
+name=`echo $name+1|bc`
 done
