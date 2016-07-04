@@ -6,7 +6,7 @@ ENV SERVER_IP 127.0.0.1
 # Install packages
 WORKDIR /tmp
 RUN apt-get update && \
-    apt-get install -y libfontconfig wget adduser && \
+    apt-get install -y libfontconfig wget adduser bc && \
     wget https://grafanarel.s3.amazonaws.com/builds/grafana_2.6.0_amd64.deb && \
     dpkg -i grafana_2.6.0_amd64.deb && \
     git clone https://github.com/percona/grafana-dashboards.git && \
