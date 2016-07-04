@@ -20,7 +20,7 @@ RUN apt-get update && \
 
 # Make prometheus config file
 ADD make_config.sh /make_config.sh
-#RUN touch /usr/local/prometheus/prometheus.yml
+RUN touch /usr/local/prometheus/prometheus.yml
 
 # Add grafana config file
 ADD grafana.ini /etc/grafana/grafana.ini
