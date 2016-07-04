@@ -61,7 +61,7 @@ ID / PW : admin / admin
 ## Grafana setting
 Go to Data Sources and add settings for Prometheus
 ```shell
-Name : Db1
+Name : Prometheus
 Type : Prometheus
 Uri : http://localhost:9090
 ```
