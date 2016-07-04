@@ -3,8 +3,7 @@
 name=1
 for addr in $SERVER_IP
 do
-#cat << EOF >> /usr/local/prometheus/prometheus.yml
-cat << EOF 
+cat << EOF >> /usr/local/prometheus/db${name}.yml
 
 global:
   scrape_interval:     5s
