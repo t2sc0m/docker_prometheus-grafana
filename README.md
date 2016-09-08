@@ -38,7 +38,8 @@ $ ./mysqld_exporter -config.my-cnf=".my.cnf" &
 
 ## Environment
 ```shell
-SERVER_IP : YOUR_DB_SERVER_IP_ADDRESS1 IP_ADDRESS2 IPADDRESS3 ...
+SERVER_IP   : YOUR_DB_SERVER_IP_ADDRESS1 IP_ADDRESS2 IPADDRESS3 ...
+SERVER_NAME : YOUR_DB_SERVER_NAME1 NAME2 NAME3 ...
 ```
 
 ## Port 
@@ -49,7 +50,10 @@ SERVER_IP : YOUR_DB_SERVER_IP_ADDRESS1 IP_ADDRESS2 IPADDRESS3 ...
 
 ## USAGE
 ```shell
-$ sudo docker run --rm -i -p 3000:3000 -e SERVER_IP="DB_SERVER_IP1 DB_SERVER_IP2 DB_SERVER_IP3" -t adite/pro-gf
+$ sudo docker run --rm -i -p 3000:3000 \
+  -e SERVER_IP="DB_SERVER_IP1 DB_SERVER_IP2 DB_SERVER_IP3" \
+  -e SERVER_NAME="DB_SERVER_NAME1 DB_SERVER_NAME2 DB_SERVER_NAME3" \
+  -t adite/pro-gf
 ```
 
 ## Grafana connect

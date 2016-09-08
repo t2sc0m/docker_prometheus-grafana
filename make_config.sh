@@ -1,8 +1,8 @@
 #!/bin/bash
 
-name=1
+LEN=`echo ${#SERVER_NAME[@]}-1|bc`
 
-cat << EOF > /usr/local/prometheus/prometheus.yml
+cat << EOF > ./prometheus.yml
 
 global:
   scrape_interval:     5s
@@ -12,32 +12,28 @@ scrape_configs:
     target_groups:
 EOF
 
-for addr in $SERVER_IP
+for i in $(seq 0 $LEN)
 do
-cat << EOF >> /usr/local/prometheus/prometheus.yml
-      - targets: ['${addr}:9100']
+cat << EOF >> ./prometheus.yml
+      - targets: ['${SERVER_IP[$i]}:9100']
         labels:
-          alias: DB${name}
+          alias: ${SERVER_NAME[$i]}
 
 EOF
-name=`echo $name+1|bc`
 done
 
-cat << EOF >> /usr/local/prometheus/prometheus.yml
+cat << EOF >> ./prometheus.yml
 
   - job_name: mysql
     target_groups:
 EOF
 
-name=1
-
-for addr in $SERVER_IP
+for i in $(seq 0 $LEN)
 do
-cat << EOF >> /usr/local/prometheus/prometheus.yml
-      - targets: ['${addr}:9104']
+cat << EOF >> ./prometheus.yml
+      - targets: ['${SERVER_IP[$i]}:9104']
         labels:
-          alias: DB${name}
+          alias: ${SERVER_NAME[$i]}
 
 EOF
-name=`echo $name+1|bc`
 done
