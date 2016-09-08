@@ -17,7 +17,7 @@ RUN apt-get update && \
     mkdir -p /usr/local/prometheus && \
     tar zxf prometheus-0.17.0rc2.linux-amd64.tar.gz -C /usr/local/prometheus --strip-components=1 && \
     sed -i 's/step_input:""/step_input:c.target.step/; s/ HH:MM/ HH:mm/; s/,function(c)/,"templateSrv",function(c,g)/; s/expr:c.target.expr/expr:g.replace(c.target.expr,c.panel.scopedVars)/' /usr/share/grafana/public/app/plugins/datasource/prometheus/query_ctrl.js && \
-    sed -i 's/h=a.interval/h=g.replace(a.interval, c.scopedVars)/' /usr/share/grafana/public/app/plugins/datasource/prometheus/datasource.js
+    sed -i 's/h=a.interval/h=g.replace(a.interval, c.scopedVars)/' /usr/share/grafana/public/app/plugins/datasource/prometheus/datasource.js && \
     rm -rf /tmp/* && \
     apt-get clean
 
