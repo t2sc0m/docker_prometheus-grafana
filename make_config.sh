@@ -1,7 +1,38 @@
 #!/bin/bash
 
-LEN=`echo ${#SERVER_NAME[@]}-1|bc`
+ipcnt=0
+namecnt=0
 
+# Create array
+for i in `echo $SERVER_IP`
+do
+    IP[$ipcnt]=$i
+    ipcnt=`echo $ipcnt+1|bc`
+done
+
+for i in `echo $SERVER_NAME`
+do
+    NAME[$namecnt]=$i
+    namecnt=`echo $namecnt+1|bc`
+done
+
+# Check server IP/NAME count
+IPLEN=`echo ${#IP[@]}-1|bc`
+NAMELEN=`echo ${#NAME[@]}-1|bc`
+
+echo $IPLEN
+echo $NAMELEN
+
+if [ $IPLEN==$NAMELEN ]
+then
+#    echo "No Problem IP count == NAME count"
+    LEN=${IPLEN}
+else
+    echo "ERR!! IP count != NAME count"
+    LEN=0
+fi
+
+# Create prometheus.yml
 cat << EOF > ./prometheus.yml
 
 global:
@@ -15,9 +46,9 @@ EOF
 for i in $(seq 0 $LEN)
 do
 cat << EOF >> ./prometheus.yml
-      - targets: ['${SERVER_IP[$i]}:9100']
+      - targets: ['${IP[$i]}:9100']
         labels:
-          alias: ${SERVER_NAME[$i]}
+          alias: ${NAME[$i]}
 
 EOF
 done
@@ -31,9 +62,9 @@ EOF
 for i in $(seq 0 $LEN)
 do
 cat << EOF >> ./prometheus.yml
-      - targets: ['${SERVER_IP[$i]}:9104']
+      - targets: ['${IP[$i]}:9104']
         labels:
-          alias: ${SERVER_NAME[$i]}
+          alias: ${NAME[$i]}
 
 EOF
 done
