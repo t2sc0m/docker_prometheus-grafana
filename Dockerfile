@@ -34,5 +34,7 @@ RUN chmod 0755 /startup.sh
 EXPOSE 3000
 EXPOSE 9090
 
+VOLUME /usr/local/prometheus/data
+
 WORKDIR /usr/local/prometheus
 CMD ["/startup.sh"]

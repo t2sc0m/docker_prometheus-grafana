@@ -37,9 +37,14 @@ $ ./mysqld_exporter -config.my-cnf=".my.cnf" &
 ```
 
 ## Environment
+### Server Infomation
 ```shell
-SERVER_IP   : YOUR_DB_SERVER_IP_ADDRESS1 IP_ADDRESS2 IPADDRESS3 ...
-SERVER_NAME : YOUR_DB_SERVER_NAME1 NAME2 NAME3 ...
+SERVER_IP   : YOUR_DB_SERVER1_IP_ADDRESS SERVER2_IP_ADDRESS SERVER3_IPADDRESS ...
+SERVER_NAME : YOUR_DB_SERVER1_NAME1 SERVER2_NAME SERVER3_NAME ...
+```
+### Volume
+```shell
+VOLUME      : /usr/local/prometheus/data
 ```
 
 ## Port 
@@ -51,8 +56,9 @@ SERVER_NAME : YOUR_DB_SERVER_NAME1 NAME2 NAME3 ...
 ## USAGE
 ```shell
 $ sudo docker run --rm -i -p 3000:3000 \
-  -e SERVER_IP="DB_SERVER_IP1 DB_SERVER_IP2 DB_SERVER_IP3" \
-  -e SERVER_NAME="DB_SERVER_NAME1 DB_SERVER_NAME2 DB_SERVER_NAME3" \
+  -e SERVER_IP="DB_SERVER1_IP DB_SERVER2_IP DB_SERVER3_IP" \
+  -e SERVER_NAME="DB_SERVER1_NAME DB_SERVER2_NAME DB_SERVER3_NAME" \
+  -v DOCKER_SERVER_LOCAL_DIRECTORY:/usr/local/prometheus/data   \
   -t adite/pro-gf
 ```
 
