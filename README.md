@@ -3,6 +3,10 @@
 ## PROMETHEUS + GRAFANA (PRO-GF)
 ![tescom](https://en.gravatar.com/userimage/96759029/aa4308f795041de37cc2fedf0d1071ca?size=128)
 
+[![](https://images.microbadger.com/badges/image/adite/pro-gf.svg)](https://microbadger.com/images/adite/pro-gf "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/adite/pro-gf.svg)](https://microbadger.com/images/adite/pro-gf "Get your own version badge on microbadger.com")
+
+
 ## Install exporter(agent) on client
 ```shell
 $ wget https://github.com/prometheus/node_exporter/releases/download/0.12.0rc3/node_exporter-0.12.0rc3.linux-amd64.tar.gz
