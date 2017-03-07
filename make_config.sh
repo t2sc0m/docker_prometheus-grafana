@@ -48,7 +48,7 @@ do
 cat << EOF >> ./prometheus.yml
       - targets: ['${IP[$i]}:9100']
         labels:
-          alias: ${NAME[$i]}
+          instance: ${NAME[$i]}
 
 EOF
 done
@@ -64,7 +64,7 @@ do
 cat << EOF >> ./prometheus.yml
       - targets: ['${IP[$i]}:9104']
         labels:
-          alias: ${NAME[$i]}
+          instance: ${NAME[$i]}
 
 EOF
 done
