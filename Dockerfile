@@ -13,9 +13,9 @@ RUN apt-get update && \
     git clone https://github.com/percona/grafana-dashboards.git && \
     cp -r grafana-dashboards/dashboards /var/lib/grafana && \
     chown grafana:grafana /var/lib/grafana -R && \
-    wget https://github.com/prometheus/prometheus/releases/download/v1.5.2/prometheus-1.5.2.linux-amd64.tar.gz && \
+    wget https://github.com/prometheus/prometheus/releases/download/v0.17.0rc2/prometheus-0.17.0rc2.linux-amd64.tar.gz && \
     mkdir -p /usr/local/prometheus && \
-    tar zxf prometheus-1.5.2.linux-amd64.tar.gz -C /usr/local/prometheus --strip-components=1 && \
+    tar zxf prometheus-0.17.0rc2.linux-amd64.tar.gz -C /usr/local/prometheus --strip-components=1 && \
     sed -i 's/step_input:""/step_input:c.target.step/; s/ HH:MM/ HH:mm/; s/,function(c)/,"templateSrv",function(c,g)/; s/expr:c.target.expr/expr:g.replace(c.target.expr,c.panel.scopedVars)/' /usr/share/grafana/public/app/plugins/datasource/prometheus/query_ctrl.js && \
     sed -i 's/h=a.interval/h=g.replace(a.interval, c.scopedVars)/' /usr/share/grafana/public/app/plugins/datasource/prometheus/datasource.js && \
     rm -rf /tmp/* && \
