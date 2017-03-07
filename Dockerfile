@@ -10,7 +10,7 @@ RUN apt-get update && \
     apt-get install -y libfontconfig wget adduser bc && \
     wget https://grafanarel.s3.amazonaws.com/builds/grafana_2.6.0_amd64.deb && \
     dpkg -i grafana_2.6.0_amd64.deb && \
-    git clone https://github.com/percona/grafana-dashboards.git && \
+    git clone https://github.com/t2sc0m/grafana-dashboards.git && \
     cp -r grafana-dashboards/dashboards /var/lib/grafana && \
     chown grafana:grafana /var/lib/grafana -R && \
     wget https://github.com/prometheus/prometheus/releases/download/0.17.0rc2/prometheus-0.17.0rc2.linux-amd64.tar.gz && \
@@ -27,9 +27,6 @@ RUN touch /usr/local/prometheus/prometheus.yml
 
 # Add grafana config file
 ADD grafana.ini /etc/grafana/grafana.ini
-
-# change dashboard
-ADD Gdashboard.tgz /tmp/Gdashboard.tgz
 
 ADD startup.sh /startup.sh
 RUN chmod 0755 /startup.sh
