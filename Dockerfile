@@ -28,6 +28,12 @@ RUN touch /usr/local/prometheus/prometheus.yml
 # Add grafana config file
 ADD grafana.ini /etc/grafana/grafana.ini
 
+# change dashboard
+ADD Gdashboard.tgz /tmp/Gdashboard.tgz
+RUN rm -rf /var/lib/grafana/dashboards && \
+    tar xzf Gdashboard.tgz -C /var/lib/grafana/ && \
+    rm -rf /tmp/Gdashboard.tgz
+
 ADD startup.sh /startup.sh
 RUN chmod 0755 /startup.sh
 
