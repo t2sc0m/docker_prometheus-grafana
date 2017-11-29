@@ -4,21 +4,21 @@ ipcnt=0
 namecnt=0
 
 # Create array
-for i in `echo $SERVER_IP`
+for i in $(echo $SERVER_IP)
 do
     IP[$ipcnt]=$i
-    ipcnt=`echo $ipcnt+1|bc`
+    ipcnt=$(echo $ipcnt+1|bc)
 done
 
-for i in `echo $SERVER_NAME`
+for i in $(echo $SERVER_NAME)
 do
     NAME[$namecnt]=$i
-    namecnt=`echo $namecnt+1|bc`
+    namecnt=$(echo $namecnt+1|bc)
 done
 
 # Check server IP/NAME count
-IPLEN=`echo ${#IP[@]}-1|bc`
-NAMELEN=`echo ${#NAME[@]}-1|bc`
+IPLEN=$(echo ${#IP[@]}-1|bc)
+NAMELEN=$(echo ${#NAME[@]}-1|bc)
 
 echo $IPLEN
 echo $NAMELEN
